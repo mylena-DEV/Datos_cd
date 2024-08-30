@@ -1,6 +1,5 @@
 from django.db import models
 
-    
 GENERO = [
     ('M','M'),
     ('F','F'),
@@ -11,7 +10,6 @@ ESTADO_CIVIL = [
     ('Casado','Casado'),
     ('Soltero','Soltero'),
 ]    
-
         
 class Ciudad (models.Model):
     Ciudad_Actual = models.CharField(max_length=50,null=False)
@@ -45,3 +43,4 @@ class Datos (models.Model):
     Ciudad_Actual = models.ForeignKey(Ciudad,on_delete=models.CASCADE)
     Nombre_Lugar = models.ForeignKey(Lugar_Nacimiento,on_delete=models.CASCADE)
 # Create your models here.
+
