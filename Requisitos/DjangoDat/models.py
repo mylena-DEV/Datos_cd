@@ -37,10 +37,14 @@ class Datos (models.Model):
     telefono = models.CharField(max_length=50,null=False)
     provincia = models.CharField(max_length=50,null=False)
     correo = models.CharField(max_length=50,null=False)
-    fecha_nacimiento = models.CharField(max_length=50,null=False)
+    fecha_nacimiento = models.DateField(null=False)
     Sexo = models.CharField(max_length=50,choices=GENERO,verbose_name='Genero')
     EstadoCivil = models.CharField(max_length=50,choices=ESTADO_CIVIL,verbose_name='Estado civil')
     Ciudad_Actual = models.ForeignKey(Ciudad,on_delete=models.CASCADE)
     Nombre_Lugar = models.ForeignKey(Lugar_Nacimiento,on_delete=models.CASCADE)
+    
 # Create your models here.
-
+class Productos(models.Model):
+    codigo = models.IntegerField(null=False)
+    nombre = models.CharField(max_length=50,null=False)
+    precio = models.FloatField(null=False)
